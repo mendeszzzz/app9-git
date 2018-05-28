@@ -28,19 +28,19 @@ function onSuccess(position){
   	    'Altitude Accuracy:'+position.coords.altitudeAccuracy+'\n'+
           'Heading:'+position.coords.heading+'\n'+
   	          'Speed:'+position.coords.speed+'\n'+
-  	  'Timestamp'+position.timestamp+'\n');
+  	  'Timestamp:'+position.timestamp+'\n');
 
 };
 
 
 function onError(error){
-	alert('code:'+error.code+'\n'+'message:'+error.message+'\n');
-                        }
+	alert('code:'+ error.code +'\n'+'message:'+error.message+'\n');
+  }
 }
 
 function watchPosition(){
 	var options={
-      maximumAge: 36000000,
+      maximumAge: 3600000,
       timeout: 3000,
       enableHighAccuracy :true, 
 }
@@ -50,11 +50,11 @@ function onSuccess(position) {
 	$('#latitud').html(position.coords.latitude);
 	$('#longitud').html(position.coords.longitude);
 	$('#altitud').html(position.coords.altitude);
-    $('#accuracy').html(position.coords.accuracy);
+  $('#accuracy').html(position.coords.accuracy);
 	$('#aaccuracy').html(position.coords.altitudeAccuracy);
 	$('#headingg').html(position.coords.heading);
 	$('#speed').html(position.coords.speed);
-	$('#timestamp').html(position.coords.timestamp);
+	$('#timestamp').html(position.timestamp);
 
 };
 
